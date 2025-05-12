@@ -1,0 +1,147 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World Air Pollution Insights</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f2f6ff;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    section {
+      margin-bottom: 4rem;
+      background-color: #ffffff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #2a5298;
+    }
+
+    canvas {
+      display: block;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    footer {
+      background-color: #2a5298;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Global Insights</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="airstats.html">Air Stats by Country</a>
+      <a href="causes.html">Causes of Air Pollution</a>
+      <a href="prevention.html">Prevention Methods</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Global Air Quality Index (AQI)</h2>
+      <canvas id="aqiChart" width="800" height="400"></canvas>
+    </section>
+
+    <section>
+      <h2>Air Pollution and Population Density</h2>
+      <canvas id="densityChart" width="800" height="400"></canvas>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Breathe Easy. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const aqiCtx = document.getElementById('aqiChart').getContext('2d');
+    new Chart(aqiCtx, {
+      type: 'bar',
+      data: {
+        labels: ['India', 'China', 'USA', 'Russia', 'UK', 'Germany'],
+        datasets: [{
+          label: 'Average AQI (2025)',
+          data: [180, 200, 90, 180, 55, 50],
+          backgroundColor: '#e74c3c'
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Air Quality Index by Country',
+            font: {
+              size: 18
+            }
+          }
+        }
+      }
+    });
+
+    const densityCtx = document.getElementById('densityChart').getContext('2d');
+    new Chart(densityCtx, {
+      type: 'line',
+      data: {
+        labels: ['India', 'China', 'USA', 'Russia', 'UK', 'Germany'],
+        datasets: [
+          {
+            label: 'Population Density (per km²)',
+            data: [464, 153, 36, 9, 281, 233],
+            borderColor: '#2980b9',
+            tension: 0.3,
+            fill: false
+          },
+          {
+            label: 'AQI',
+            data: [180, 200, 90, 180, 55, 50],
+            borderColor: '#27ae60',
+            tension: 0.3,
+            fill: false
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'AQI vs Population Density',
+            font: {
+              size: 18
+            }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

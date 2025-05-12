@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Air Stats by Country</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #e6f9f8;
+        color: #333;
+      }
+      header {
+        background: linear-gradient(to right, #009688, #00796b);
+        color: white;
+        padding: 1.5rem 2rem;
+        text-align: center;
+      }
+      main {
+        padding: 2rem;
+      }
+      section {
+        margin-bottom: 3rem;
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+      .clickable-map {
+        display: block;
+        margin: 0 auto;
+        width: 90%;
+        max-width: 800px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+      .country-image {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        margin: 1rem 0;
+      }
+      .country-content {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
+      .country-text {
+        flex: 1;
+        min-width: 250px;
+      }
+      footer {
+        background-color: #00796b;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+        margin-top: 2rem;
+      }
+      .high {
+        background-color: #ffb5b5;
+        padding: 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .moderate {
+        background-color: #fcf9c0;
+        padding: 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .low {
+        background-color: #c6fdc6;
+        padding: 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .legend-bar {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+        padding: 1rem;
+        border-radius: 8px;
+        background-color: #ffffff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+      .legend-item {
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        font-weight: bold;
+        color: #333;
+      }
+      .legend-item.high {
+        background-color: #ffb5b5;
+      }
+      .legend-item.moderate {
+        background-color: #fcf9c0;
+      }
+      .legend-item.low {
+        background-color: #c6fdc6;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Air Stats by Country</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="worldinsights.html">Global Insights</a>
+        <a href="causes.html">Causes of Air Pollution</a>
+        <a href="prevention.html">Prevention Methods</a>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2>Select a Country</h2>
+        <img
+          src="world-map_page-0001.jpg"
+          alt="Clickable World Map"
+          usemap="#worldmap"
+          class="clickable-map"
+        />
+        <map name="worldmap">
+          <!-- India -->
+          <area
+            shape="poly"
+            coords="1473, 768, 1431, 848, 1477, 942, 1576, 841"
+            alt="India"
+            href="#india"
+          />
+          <!-- China -->
+          <area
+            shape="rect"
+            coords="1563, 806, 1483, 749, 1520, 693, 1558, 669, 1642, 726, 1750, 621, 1815, 682, 1723, 747, 1738, 816,1683, 868, 1630, 862"
+            alt="China"
+            href="#china"
+          />
+          <!-- USA -->
+          <area shape="rect" coords="180,120,240,160" alt="USA" href="#usa" />
+          <!-- Russia -->
+          <area
+            shape="rect"
+            coords="450,100,490,160"
+            alt="Russia"
+            href="#russia"
+          />
+          <!-- South Korea -->
+          <area
+            shape="rect"
+            coords="550,290,580,320"
+            alt="South Korea"
+            href="#south-korea"
+          />
+          <!-- Japan -->
+          <area
+            shape="rect"
+            coords="590,100,640,150"
+            alt="Japan"
+            href="#japan"
+          />
+          <!-- Switzerland -->
+          <area
+            shape="rect"
+            coords="610,350,640,380"
+            alt="Switzerland"
+            href="#switzerland"
+          />
+          <!-- Iran -->
+          <area shape="rect" coords="500,320,530,350" alt="Iran" href="#iran" />
+          <!-- Iraq -->
+          <area shape="rect" coords="470,320,500,350" alt="Iraq" href="#iraq" />
+          <!-- Indonesia -->
+          <area
+            shape="rect"
+            coords="100,380,140,420"
+            alt="Indonesia"
+            href="#indonesia"
+          />
+          <!-- Canada -->
+          <area
+            shape="rect"
+            coords="90,50,130,80"
+            alt="Canada"
+            href="#canada"
+          />
+          <!-- Malaysia -->
+          <area
+            shape="rect"
+            coords="120,370,160,400"
+            alt="Malaysia"
+            href="#malaysia"
+          />
+          <!-- Mexico -->
+          <area
+            shape="rect"
+            coords="160,160,200,200"
+            alt="Mexico"
+            href="#mexico"
+          />
+          <!-- Singapore -->
+          <area
+            shape="rect"
+            coords="540,370,570,390"
+            alt="Singapore"
+            href="#singapore"
+          />
+          <!-- Germany -->
+          <area
+            shape="rect"
+            coords="590,220,620,240"
+            alt="Germany"
+            href="#germany"
+          />
+          <!-- UK -->
+          <area shape="rect" coords="560,50,590,80" alt="UK" href="#uk" />
+          <!-- France -->
+          <area
+            shape="rect"
+            coords="600,180,640,220"
+            alt="France"
+            href="#france"
+          />
+        </map>
+        <div class="legend-bar">
+          <span class="legend-item high">High Pollution</span>
+          <span class="legend-item moderate">Moderate Pollution</span>
+          <span class="legend-item low">Low Pollution</span>
+        </div>
+      </section>
+
+      <section class="high">
+        <h3>India</h3>
+        <div class="country-content">
+          <img
+            src="india.webp"
+            alt="Pollution in India"
+            class="country-image"
+          />
+          <div class="country-text">
+            <p>
+              India faces some of the highest levels of air pollution globally,
+              with major cities like Delhi, Kanpur, and Varanasi frequently
+              recording hazardous Air Quality Index (AQI) levels. The primary
+              causes include vehicle emissions, industrial discharge,
+              construction dust, and the burning of crop residue in northern
+              states. During winter, atmospheric conditions trap pollutants near
+              the ground, worsening smog. This persistent pollution not only
+              harms public health—causing respiratory and cardiovascular
+              diseases—but also affects agriculture and visibility, making it a
+              critical environmental and public health issue.
+            </p>
+          </div>
+          <p>
+            <strong>Average AQI:</strong> 180 <br />
+            <strong>Major Cities Affected:</strong> Delhi, Kanpur, Varanasi
+          </p>
+        </div>
+      </section>
+
+      <section class="high">
+        <h3>China</h3>
+        <div class="country-content">
+        <img src="china.jpg" alt="Pollution in China" class="country-image" />
+        <div class="country-text">
+          <p>
+
+          </p>
+        </div>
+        <p>
+          <strong> Average AQI: </strong> 200 <br />
+          <strong> Major Cities Affected: </strong>
+          Beijing, Tianjin, Shijiazhuang
+        </p></div>
+      </section>
+
+      <section class="moderate">
+        <h3>USA</h3>
+        <div class="country-content">
+        <div class="country-content">
+        <img src="usa.jpg" alt="Pollution in USA" class="country-image" />
+        
+        <p>
+          <strong> Average AQI: </strong> 90 <br />
+          <strong> Major Cities Affected: </strong>
+          Los Angeles, Bakersfield, Phoenix
+        </p>
+      </section>
+
+      <section class="high">
+        <h3>South Korea</h3>
+        <img src="skorea.jpg" alt="Pollution in USA" class="country-image" />
+        <p>
+          <strong> Average AQI: </strong> 105 <br />
+          <strong> Major Cities Affected: </strong>
+          Seoul, Incheon, Daegu
+        </p>
+      </section>
+
+      <section class="low">
+        <h3>Switzerland</h3>
+        <img
+          src="switzerland.jpg"
+          alt="Clean Air in Switzerland"
+          class="country-image"
+        />
+        <p>
+          <strong> Average AQI: </strong> 40 <br />
+          <strong> Major Cities: </strong>
+          Zurich, Geneva
+        </p>
+      </section>
+
+      <section class="low">
+        <h3>Japan</h3>
+        <img src="japan.jpg" alt="Pollution in USA" class="country-image" />
+        <p>
+          <strong> Average AQI: </strong> 60 <br />
+          <strong> Major Cities Affected: </strong>
+          Tokyo, Osaka, Fukuoka
+        </p>
+      </section>
+
+      <section class="high">
+        <h3>Malaysia</h3>
+        <img src="malaysia.jpg" alt="Pollution in USA" class="country-image" />
+        <p>
+          <strong> Average AQI: </strong> 115 <br />
+          <strong> Major Cities Affected: </strong>
+          Mexico City, Toluca, Monterrey
+        </p>
+      </section>
+
+      <section class="high">
+        <h3>Iran</h3>
+        <img src="iran.jpg" alt="Pollution in USA" class="country-image" />
+        <p>
+          <strong> Average AQI: </strong> 160 <br />
+          <strong> Major Cities Affected: </strong>
+          Tehran, Ahvaz, Mashhad
+        </p>
+      </section>
+
+      <section class="high">
+        <h3>Iraq</h3>
+        <img src="iraq.jpg" alt="Pollution in USA" class="country-image" />
+        <p>
+          <strong> Average AQI: </strong> 155 <br />
+          <strong> Major Cities Affected: </strong>
+          Baghdad, Basra, Mosul
+        </p>
+      </section>
+
+      <section class="low">
+        <h3>Canada</h3>
+        <img
+          src="canada.jpg"
+          alt="Pollution in USA"
+          height="10%"
+          class="country-image"
+        />
+        <p>
+          <strong> Average AQI: </strong> 40 <br />
+          <strong> Major Cities Affected: </strong>
+          Toronto,Vancouver, Calgary
+        </p>
+      </section>
+
+      <section class="low">
+        <h3>UK</h3>
+        <img src="uk.jpg" alt="Pollution in USA" class="country-image" />
+        <p>
+          <strong> Average AQI: </strong> 55 <br />
+          <strong> Major Cities Affected: </strong>
+          London, Birmingham, Manchester
+        </p>
+      </section>
+
+      <section class="high">
+        <h3>Indonesia</h3>
+        <img src="indonesia.jpg" alt="Pollution in USA" class="country-image" />
+        <p>
+          <strong> Average AQI: </strong> 140 <br />
+          <strong> Major Cities Affected: </strong>
+          Jakarta, Pekanbaru, Palembang
+        </p>
+      </section>
+
+      <section class="moderate">
+        <h3>Singapore</h3>
+        <img src="singapore.jpg" alt="Pollution in USA" class="country-image" />
+        <p>
+          <strong> Average AQI: </strong> 105 <br />
+          <strong> Major Cities Affected: </strong>
+          Singapore (City-State)
+        </p>
+      </section>
+
+      <section class="low">
+        <h3>Germany</h3>
+        <img src="germany.jpg" alt="Pollution in USA" class="country-image" />
+        <p>
+          <strong> Average AQI: </strong> 50 <br />
+          <strong> Major Cities Affected: </strong>
+          Berlin, Munich, Frankfurt
+        </p>
+      </section>
+
+      <section class="high">
+        <h3>Mexico</h3>
+        <img src="mexico.jpg" alt="Pollution in USA" class="country-image" />
+        <p>
+          <strong> Average AQI: </strong> 115 <br />
+          <strong> Major Cities Affected: </strong>
+          Mexico City, Toluca, Monterrey
+        </p>
+      </section>
+
+      <section class="low">
+        <h3>France</h3>
+        <img src="france.jpg" alt="Pollution in USA" class="country-image" />
+        <p>
+          <strong> Average AQI: </strong> 55 <br />
+          <strong> Major Cities Affected: </strong>
+          Paris, Lyon, Marseille
+        </p>
+      </section>
+      <section class="high">
+        <h3>Russia</h3>
+        <img src="russia.jpg" alt="Pollution in USA" class="country-image" />
+        <p>
+          <strong> Average AQI: </strong> 180 <br />
+          <strong> Major Cities Affected: </strong>
+          Moscow, Saint Petersburg, Novosibirsk
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Breathe Easy. All rights reserved.</p>
+    </footer>
+
+    <script>
+      document.querySelectorAll("area").forEach((area) => {
+        area.addEventListener("click", function (event) {
+          event.preventDefault(); // Prevent default anchor behavior
+          const countryId = area.getAttribute("href").substring(1); // Get the ID from href (e.g., "#india")
+          document
+            .getElementById(countryId)
+            .scrollIntoView({ behavior: "smooth" });
+        });
+      });
+    </script>
+  </body>
+</html>

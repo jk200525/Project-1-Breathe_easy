@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Causes of Air Pollution</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff8f0;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(to right, #d35400, #e67e22);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    h2 {
+      text-align: center;
+      color: #e67e22;
+      margin-bottom: 2rem;
+    }
+
+    .causes-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .cause-item {
+      background-color: #fff;
+      border-left: 6px solid #e67e22;
+      padding: 1.5rem;
+      width: 280px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .cause-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .cause-item h3 {
+      color: #d35400;
+      margin-top: 0;
+    }
+
+    footer {
+      background-color: #e67e22;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Causes of Air Pollution</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="airstats.html">Air Stats by Country</a>
+      <a href="worldinsights.html">Global Insights</a>
+      <a href="prevention.html">Prevention Methods</a>
+    </nav>
+  </header>
+
+  <main class="causes">
+    <h2>Major Contributors to Air Pollution</h2>
+    <div class="causes-list">
+      <div class="cause-item">
+        <h3>Vehicle Emissions</h3>
+        <p>Exhaust from cars and trucks release nitrogen dioxide, carbon monoxide, and particulate matter into the atmosphere.</p>
+      </div>
+      <div class="cause-item">
+        <h3>Industrial Activities</h3>
+        <p>Factories emit pollutants like sulfur dioxide and volatile organic compounds (VOCs) into the air.</p>
+      </div>
+      <div class="cause-item">
+        <h3>Burning Fossil Fuels</h3>
+        <p>Coal, oil, and gas combustion for energy and heat production release harmful gases and particles.</p>
+      </div>
+      <div class="cause-item">
+        <h3>Agricultural Practices</h3>
+        <p>Pesticides and fertilizers emit ammonia, while burning crop residues adds to air contamination.</p>
+      </div>
+      <div class="cause-item">
+        <h3>Household Activities</h3>
+        <p>Use of solid fuels for cooking and heating can produce significant indoor and outdoor air pollution.</p>
+      </div>
+      <div class="cause-item">
+        <h3>Waste Burning</h3>
+        <p>Burning plastic and other waste emits toxic chemicals including dioxins and furans into the atmosphere.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Breathe Easy. All rights reserved.</p>
+  </footer>
+</body>
+</html>

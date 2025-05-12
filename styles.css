@@ -1,0 +1,93 @@
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f9f9;
+      color: #333;
+    }
+    
+    header {
+      background: linear-gradient(to right, #56ccf2, #2f80ed);
+      color: white;
+      padding: 1.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      margin-top: 1.5rem;
+      padding-bottom: 0.5rem;
+    }
+    
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(to right, #ffd700, #ffffff);
+      border-radius: 2px;
+      transition: width 0.4s ease;
+    }
+    
+    nav a:hover {
+      font-size: larger;
+      transform: scale(1.1);
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+    }
+    
+    nav a:hover::after {
+      width: 100%;
+    }    
+    
+    .hero, .stats, .causes, .prevention {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    
+    .world-map {
+      margin-top: 2rem;
+    }
+    
+    .clickable-map {
+      width: 90%;
+      max-width: 1000px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    
+    .map-note {
+      margin-top: 0.5rem;
+      font-style: italic;
+      color: #555;
+    }
+    
+    canvas {
+      max-width: 100%;
+      margin: 2rem auto;
+      display: block;
+    }
+    
+    footer {
+      background-color: #2f80ed;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
